@@ -14,6 +14,8 @@ Directory structure example :
  |  | [-] imagemagick 
  |  |  | [-] imagemagick6.8.9-7
  |  |     | neard.conf
+ |  |  | [-] imagemagick6.9.3-8
+ |  |     | neard.conf
 ```
 
 * Edit the `neard.conf` file and replace the key `imagemagickVersion` with the correct version.
@@ -23,9 +25,10 @@ Directory structure example :
 
 ![](https://raw.github.com/crazy-max/neard-tool-imagemagick/master/img/star-20160403.png) : Default bundle on Neard.
 
-|               | ImageMagick release date | Neard release | Download |
-| --------------|:------------------------:|:-------------:|:--------:|
+|                         | ImageMagick release date | Neard release | Download |
+| ------------------------|:------------------------:|:-------------:|:--------:|
 | **ImageMagick 6.8.9-7** ![](https://raw.github.com/crazy-max/neard-tool-imagemagick/master/img/star-20160403.png) | 2014/08/16 | [r1](https://github.com/crazy-max/neard-tool-imagemagick/releases/tag/r1) | [neard-imagemagick-6.8.9-7-r1.7z](https://github.com/crazy-max/neard-tool-imagemagick/releases/download/r1/neard-imagemagick-6.8.9-7-r1.7z) |
+| **ImageMagick 6.9.3-8** | 2016/04/11 | [r2](https://github.com/crazy-max/neard-tool-imagemagick/releases/tag/r2) | [neard-imagemagick-6.9.3-8-r2.7z](https://github.com/crazy-max/neard-tool-imagemagick/releases/download/r2/neard-imagemagick-6.9.3-8-r2.7z) |
 
 ## Sources
 

@@ -2,7 +2,7 @@
 
 ## r3 (2016/04/26)
 
-This release works since **[Neard 1.0.12](https://github.com/crazy-max/neard/releases/tag/v1.0.12)**
+This release works since **[Neard 1.0.19](https://github.com/crazy-max/neard/releases/tag/v1.0.19)**
 
 * Add reference to IMDisplay.exe in neard.conf
 

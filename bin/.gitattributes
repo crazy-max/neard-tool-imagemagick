@@ -1,0 +1,4 @@
+*.dll binary -delta
+*.exe binary -delta
+*.rdf binary -delta
+*.xml binary -delta

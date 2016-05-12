@@ -2,6 +2,10 @@
 
 ### [Check compatibility with Neard](https://github.com/crazy-max/neard/wiki/toolImageMagick#latest) before downloading.
 
+## r4 (2016/05/12)
+
+* New bundles : 6.9.3-10, 6.9.4-0, 7.0.1-2
+
 ## r3 (2016/04/26)
 
 * Add reference to IMDisplay.exe in neard.conf

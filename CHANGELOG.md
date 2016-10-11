@@ -2,6 +2,10 @@
 
 ### [Check compatibility with Neard](https://github.com/crazy-max/neard/wiki/toolImageMagick#latest) before downloading.
 
+## r6 (2016/10/11)
+
+* New bundles : 6.9.6-1, 7.0.3-3
+
 ## r5 (2016/06/20)
 
 * New bundles : 6.9.4-9, 7.0.2-0

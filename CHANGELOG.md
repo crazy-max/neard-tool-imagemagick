@@ -1,7 +1,5 @@
 # Changelog
 
-### [Check compatibility with Neard](https://github.com/crazy-max/neard/wiki/toolImageMagick#latest) before downloading.
-
 ## r6 (2016/10/11)
 
 * New bundles : 6.9.6-1, 7.0.3-3
@@ -24,5 +22,5 @@
 
 ## r1 (2016/04/16)
 
-* Init repo with ImageMagick bundle from [Neard](https://github.com/crazy-max/neard)
+* Init repo with ImageMagick bundle from Neard
 * Add Ant build

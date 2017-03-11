@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="neard-tool-imagemagick" basedir=".">
+  
+  <dirname property="project.basedir" file="${ant.file.neard-tool-imagemagick}"/>
+  <property name="root.dir" location="${project.basedir}/.."/>
+  <property name="build.properties" value="${project.basedir}/build.properties"/>
+  <property file="${build.properties}"/>
+  
+  <!-- Neard dev -->
+  <property name="neard-dev.path" location="${root.dir}/neard-dev"/>
+  <fail unless="neard-dev.path" message="Project 'neard-dev' not found in ${neard-dev.path}"/>
+  <echo message="Neard dev found in ${neard-dev.path}" level="debug"/> 
+  
+  <!-- Import build-commons.xml -->
+  <import file="${neard-dev.path}/build/build-commons.xml"/>
+  <!-- Import build-bundle.xml -->
+  <import file="${neard-dev.path}/build/build-bundle.xml"/>
+  
+  <target name="release.build">
+    <basename property="bundle.folder" file="${bundle.path}"/>
+    <replaceproperty src="bundle.folder" dest="bundle.version" replace="${bundle.name}" with=""/>
     
-    <dirname property="project.basedir" file="${ant.file.neard-tool-imagemagick}" />
-    <property name="root.dir" location="${project.basedir}/.." />
-    <property name="build.properties" value="${project.basedir}/build.properties" />
-    <property file="${build.properties}" />
+    <getmoduleuntouched name="${bundle.name}" version="${bundle.version}" propSrcDest="bundle.srcdest" propSrcFilename="bundle.srcfilename"/>
+    <condition property="bundle.srcfinal" value="${bundle.srcdest}/ImageMagick-${bundle.version}"><available file="${bundle.srcdest}/ImageMagick-${bundle.version}/IMDisplay.exe" type="file"/></condition>
+    <condition property="bundle.srcfinal" value="${bundle.srcdest}"><available file="${bundle.srcdest}/IMDisplay.exe" type="file"/></condition>
+    <assertfile file="${bundle.srcfinal}/IMDisplay.exe"/>
     
-    <!-- Neard dev -->
-    <property name="neard-dev.path" location="${root.dir}/neard-dev" />
-    <fail unless="neard-dev.path" message="Project 'neard-dev' not found in ${neard-dev.path}" />
-    <echo message="Neard dev found in ${neard-dev.path}" level="debug" /> 
-    
-    <!-- Import build-commons.xml -->
-    <import file="${neard-dev.path}/build/build-commons.xml" />
-    <!-- Import build-bundle.xml -->
-    <import file="${neard-dev.path}/build/build-bundle.xml" />
-    
+    <delete dir="${bundle.tmp.prep.path}/${bundle.folder}"/>
+    <mkdir dir="${bundle.tmp.prep.path}/${bundle.folder}"/>
+    <copy todir="${bundle.tmp.prep.path}/${bundle.folder}" overwrite="true">
+      <fileset dir="${bundle.srcfinal}" excludes="
+        images/**,
+        www/**,
+        index.html"
+      />
+    </copy>
+    <copy todir="${bundle.tmp.prep.path}/${bundle.folder}" overwrite="true">
+      <fileset dir="${bundle.path}" defaultexcludes="yes"/>
+    </copy>
+  </target>
 </project>
